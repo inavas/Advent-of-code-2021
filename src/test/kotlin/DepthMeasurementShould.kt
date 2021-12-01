@@ -26,6 +26,18 @@ class DepthMeasurementShould {
         assertThat(result).isEqualTo(7)
     }
 
+    @Test
+    fun `Calculate how many sums are larger from previous sums`(){
+        val measurements = getIntListFromFile("depth_input_test.txt")
+
+        val depthMeasurement = DepthMeasurement()
+
+        val result = depthMeasurement.calculateSum(measurements)
+
+        assertThat(result).isEqualTo(5)
+
+    }
+
     private fun getIntListFromFile(fileName: String): List<Int> {
         val uri = this.javaClass.classLoader.getResource(fileName)
 

@@ -6,4 +6,8 @@ class DepthMeasurement {
     return result.count{ it }
     }
 
+    fun calculateSum(measurements: List<Int>): Int {
+        TODO("Not yet implemented")
+    }
+
 }
