@@ -18,16 +18,16 @@ class SubmarineMovement {
 
     private fun calculateHorizontalPosition(movements: List<String>) =
         movements.filter { command -> command.contains("forward") }
-            .map { value -> value.last().toString().toInt() }
+            .map { value -> value.lastCharAsNumber() }
             .sum()
 
     private fun calculateDepth(movements: List<String>): Int {
         var depthDown = movements.filter { command -> command.contains("down") }
-            .map { value -> value.last().toString().toInt() }
+            .map { value -> value.lastCharAsNumber() }
             .sum()
 
         val depthUp = movements.filter { command -> command.contains("up") }
-            .map { value -> value.last().toString().toInt() }
+            .map { value -> value.lastCharAsNumber() }
             .sum()
 
         return depthDown-depthUp
@@ -44,13 +44,13 @@ class SubmarineMovement {
             when {
                 "forward" in it -> {
                     horizontalPosition += it.last().toString().toInt()
-                    depth += aim * it.last().toString().toInt()
+                    depth += aim * it.lastCharAsNumber()
                 }
                 "down" in it -> {
-                    aim += it.last().toString().toInt()
+                    aim += it.lastCharAsNumber()
                 }
                 "up" in it -> {
-                    aim -= it.last().toString().toInt()
+                    aim -= it.lastCharAsNumber()
                 }
             }
         }
@@ -60,3 +60,7 @@ class SubmarineMovement {
 
 
 }
+
+private fun String.lastCharAsNumber(): Int  =
+    this.last().toString().toInt()
+
