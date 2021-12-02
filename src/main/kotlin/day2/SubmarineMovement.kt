@@ -19,6 +19,9 @@ class SubmarineMovement {
         return Pair(horizontalPosition,depthDown-depthUp)
     }
 
+    fun calculateTotalDepth(horizontalPosition: Int, depth: Int): Int {
+        return horizontalPosition*depth
+    }
 
 
 }
