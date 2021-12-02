@@ -38,7 +38,17 @@ class SubmarineMovementShould {
 
         assertThat(horizontalPosition).isEqualTo(15)
         assertThat(depth).isEqualTo(60)
+    }
 
+    @Test
+    fun `Calculate total depth with aim`(){
+        val movements = getListFromFile("day2/depth_movements_input_test.txt")
+        val submarineMovement = SubmarineMovement()
+
+        val (horizontalPosition,depth) = submarineMovement.calculateWithAim(movements)
+        val totalDepth = submarineMovement.calculateTotalDepth(horizontalPosition, depth)
+
+        assertThat(totalDepth).isEqualTo(900)
     }
 
     private fun getListFromFile(fileName: String): List<String> {
