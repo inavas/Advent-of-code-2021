@@ -35,14 +35,6 @@ class SubmarineMovement {
     }
 
     fun calculateWithAim(movements: List<String>): Pair<Int, Int> {
-        val horizontalPosition = calculateHorizontalPosition(movements)
-
-        val depth = calculateDepthWithAim(movements)
-
-        return Pair(horizontalPosition,depth)
-    }
-
-    private fun calculateDepthWithAim(movements: List<String>): Int {
         var aim = 0
         var horizontalPosition = 0
         var depth = 0
@@ -63,7 +55,7 @@ class SubmarineMovement {
             }
         }
 
-        return depth
+        return Pair(horizontalPosition,depth)
     }
 
 
