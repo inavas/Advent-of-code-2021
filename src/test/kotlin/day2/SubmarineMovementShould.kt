@@ -2,17 +2,24 @@ package day2
 
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
+import java.io.File
 
 class SubmarineMovementShould {
 
     @Test
     fun `Calculate horizontal position and depth`(){
-        val movements = listOf("forward 5","down 5","forward 8","up 3","down 8","forward 2")
+        val movements = getListFromFile("day2/depth_movements_input_test.txt")
         val submarineMovement = SubmarineMovement()
 
         val (horizontalPosition,depth) = submarineMovement.calculate(movements)
 
         Assertions.assertThat(horizontalPosition).isEqualTo(15)
         Assertions.assertThat(depth).isEqualTo(10)
+    }
+
+    private fun getListFromFile(fileName: String): List<String> {
+        val uri = this.javaClass.classLoader.getResource(fileName)
+
+        return File(uri.file).useLines { it.toList() }
     }
 }

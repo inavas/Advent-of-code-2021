@@ -19,7 +19,7 @@ class DepthMeasurementShould {
 
     @Test
     fun `Calculate how quickly depth increases from input file`(){
-        val measurements = getIntListFromFile("depth_input_test.txt")
+        val measurements = getIntListFromFile("day1/depth_input_test.txt")
 
         val depthMeasurement = DepthMeasurement()
 
@@ -30,7 +30,7 @@ class DepthMeasurementShould {
 
     @Test
     fun `Calculate how many sums are larger from previous sums`(){
-        val measurements = getIntListFromFile("depth_input_test.txt")
+        val measurements = getIntListFromFile("day1/depth_input_test.txt")
 
         val depthMeasurement = DepthMeasurement()
 
