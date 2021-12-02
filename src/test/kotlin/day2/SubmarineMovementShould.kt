@@ -30,7 +30,7 @@ class SubmarineMovementShould {
     }
 
     @Test
-    fun `Calculate depth with aim`(){
+    fun `Calculate horizontal position and depth with aim`(){
         val movements = getListFromFile("day2/depth_movements_input_test.txt")
         val submarineMovement = SubmarineMovement()
 
