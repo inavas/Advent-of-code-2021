@@ -43,7 +43,7 @@ class SubmarineMovement {
         movements.forEach {
             when {
                 "forward" in it -> {
-                    horizontalPosition += it.last().toString().toInt()
+                    horizontalPosition += it.lastCharAsNumber()
                     depth += aim * it.lastCharAsNumber()
                 }
                 "down" in it -> {
