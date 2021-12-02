@@ -1,6 +1,6 @@
 package day2
 
-import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import java.io.File
 
@@ -13,8 +13,8 @@ class SubmarineMovementShould {
 
         val (horizontalPosition,depth) = submarineMovement.calculate(movements)
 
-        Assertions.assertThat(horizontalPosition).isEqualTo(15)
-        Assertions.assertThat(depth).isEqualTo(10)
+        assertThat(horizontalPosition).isEqualTo(15)
+        assertThat(depth).isEqualTo(10)
     }
 
     @Test
@@ -26,8 +26,18 @@ class SubmarineMovementShould {
 
         val totalDepth = submarineMovement.calculateTotalDepth(horizontalPosition, depth)
 
-        Assertions.assertThat(totalDepth).isEqualTo(150)
+        assertThat(totalDepth).isEqualTo(150)
+    }
 
+    @Test
+    fun `Calculate depth with aim`(){
+        val movements = getListFromFile("day2/depth_movements_input_test.txt")
+        val submarineMovement = SubmarineMovement()
+
+        val (horizontalPosition,depth) = submarineMovement.calculateWithAim(movements)
+
+        assertThat(horizontalPosition).isEqualTo(15)
+        assertThat(depth).isEqualTo(60)
 
     }
 

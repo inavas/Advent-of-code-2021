@@ -11,6 +11,11 @@ class SubmarineMovement {
         return Pair(horizontalPosition,depth)
     }
 
+    fun calculateTotalDepth(horizontalPosition: Int, depth: Int): Int {
+        return horizontalPosition*depth
+    }
+
+
     private fun calculateHorizontalPosition(movements: List<String>) =
         movements.filter { command -> command.contains("forward") }
             .map { value -> value.last().toString().toInt() }
@@ -29,8 +34,8 @@ class SubmarineMovement {
 
     }
 
-    fun calculateTotalDepth(horizontalPosition: Int, depth: Int): Int {
-        return horizontalPosition*depth
+    fun calculateWithAim(movements: List<String>): Pair<Int, Int> {
+        TODO("Not yet implemented")
     }
 
 
