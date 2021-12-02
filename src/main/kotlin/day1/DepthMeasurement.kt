@@ -1,3 +1,5 @@
+package day1
+
 class DepthMeasurement {
     fun calculate(measurements: List<Int>): Int {
 
