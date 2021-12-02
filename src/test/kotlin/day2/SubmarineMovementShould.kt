@@ -8,7 +8,6 @@ class SubmarineMovementShould {
 
     @Test
     fun `Calculate horizontal position and depth`(){
-        //val movements = getListFromFile("day2/depth_movements_input_test.txt")
         val movements = getListFromFile("day2/depth_movements_input_test.txt")
         val submarineMovement = SubmarineMovement()
 
