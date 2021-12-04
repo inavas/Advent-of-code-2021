@@ -20,6 +20,10 @@ class DiagnosticReport {
     fun calculatePowerConsumption(gammaRate: String, epsilonRate: String): Int =
         gammaRate.binaryToDecimal() * epsilonRate.binaryToDecimal()
 
+    fun calculateOxigenGeneratorRating(report: List<String>): String {
+        TODO("Not yet implemented")
+    }
+
 
 }
 

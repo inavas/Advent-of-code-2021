@@ -1,6 +1,5 @@
 package day3
 
-import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import java.io.File
@@ -26,6 +25,17 @@ class DiagnosticReportShould {
 
         val powerConsumption = diagonsticReport.calculatePowerConsumption(gammaRate, epsilonRate)
         assertThat(powerConsumption).isEqualTo(198)
+    }
+
+    @Test
+    fun `Calculate oxigen generator rating`(){
+        val report = getListFromFile("day3/diagnostic_report_test.txt")
+
+        val diagnosticReport = DiagnosticReport()
+
+        val oxigenGeneratorRating = diagnosticReport.calculateOxigenGeneratorRating(report)
+
+        assertThat(oxigenGeneratorRating).isEqualTo("10111")
     }
 
     private fun getListFromFile(fileName: String): List<String> {
