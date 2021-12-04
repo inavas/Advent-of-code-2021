@@ -17,4 +17,8 @@ class DiagnosticReport {
 
     }
 
+    fun calculatePowerConsumption(gammaRate: String, epsilonRate: String): Int {
+        TODO("Not yet implemented")
+    }
+
 }

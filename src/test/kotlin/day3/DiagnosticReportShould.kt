@@ -17,6 +17,16 @@ class DiagnosticReportShould {
         Assertions.assertThat(epsilonRate).isEqualTo("01001")
     }
 
+    @Test
+    fun `Calculate power consumption`(){
+        val gammaRate = "10110"
+        val epsilonRate = "01001"
+        val diagonsticReport = DiagnosticReport()
+
+        val powerConsumption = diagonsticReport.calculatePowerConsumption(gammaRate, epsilonRate)
+        Assertions.assertThat(powerConsumption).isEqualTo(198)
+    }
+
 
     private fun getListFromFile(fileName: String): List<String> {
         val uri = this.javaClass.classLoader.getResource(fileName)
