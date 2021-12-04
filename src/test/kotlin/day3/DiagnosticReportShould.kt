@@ -21,9 +21,9 @@ class DiagnosticReportShould {
     fun `Calculate power consumption`(){
         val gammaRate = "10110"
         val epsilonRate = "01001"
-        val diagonsticReport = DiagnosticReport()
+        val diagnosticReport = DiagnosticReport()
 
-        val powerConsumption = diagonsticReport.calculatePowerConsumption(gammaRate, epsilonRate)
+        val powerConsumption = diagnosticReport.calculatePowerConsumption(gammaRate, epsilonRate)
         assertThat(powerConsumption).isEqualTo(198)
     }
 
@@ -33,9 +33,9 @@ class DiagnosticReportShould {
 
         val diagnosticReport = DiagnosticReport()
 
-        val oxigenGeneratorRating = diagnosticReport.calculateOxigenGeneratorRating(report)
+        val oxygenGeneratorRating = diagnosticReport.calculateOxigenGeneratorRating(report)
 
-        assertThat(oxigenGeneratorRating).isEqualTo("10111")
+        assertThat(oxygenGeneratorRating).isEqualTo("10111")
     }
 
 
@@ -45,18 +45,18 @@ class DiagnosticReportShould {
 
         val diagnosticReport = DiagnosticReport()
 
-        val oxigenGeneratorRating = diagnosticReport.calculateCO2ScrubberRating(report)
+        val co2GeneratorRating = diagnosticReport.calculateCO2ScrubberRating(report)
 
-        assertThat(oxigenGeneratorRating).isEqualTo("01010")
+        assertThat(co2GeneratorRating).isEqualTo("01010")
     }
 
     @Test
     fun `Calculate life support rating`(){
         val oxygenGeneratorRate = "10111"
         val co2ScrubberRate = "01010"
-        val diagonsticReport = DiagnosticReport()
+        val diagnosticReport = DiagnosticReport()
 
-        val powerConsumption = diagonsticReport.calculateLifeSupportRating(oxygenGeneratorRate, co2ScrubberRate)
+        val powerConsumption = diagnosticReport.calculateLifeSupportRating(oxygenGeneratorRate, co2ScrubberRate)
         assertThat(powerConsumption).isEqualTo(230)
     }
 
