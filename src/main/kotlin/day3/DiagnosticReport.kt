@@ -33,6 +33,10 @@ class DiagnosticReport {
         return report2[0]
     }
 
+    fun calculateCO2ScrubberRating(report: List<String>): String {
+        TODO("Not yet implemented")
+    }
+
 
 }
 

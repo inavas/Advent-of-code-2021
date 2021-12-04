@@ -38,6 +38,19 @@ class DiagnosticReportShould {
         assertThat(oxigenGeneratorRating).isEqualTo("10111")
     }
 
+
+    @Test
+    fun `Calculate CO2 scrubber rating`(){
+        val report = getListFromFile("day3/diagnostic_report_test.txt")
+
+        val diagnosticReport = DiagnosticReport()
+
+        val oxigenGeneratorRating = diagnosticReport.calculateCO2ScrubberRating(report)
+
+        assertThat(oxigenGeneratorRating).isEqualTo("01010")
+    }
+
+
     private fun getListFromFile(fileName: String): List<String> {
         val uri = this.javaClass.classLoader.getResource(fileName)
 
