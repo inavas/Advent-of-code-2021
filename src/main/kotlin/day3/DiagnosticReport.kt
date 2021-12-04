@@ -42,9 +42,8 @@ class DiagnosticReport {
         return resultingReport[0]
     }
 
-    fun calculateLifeSupportRating(oxygenGeneratorRate: String, co2ScrubberRate: String): Int {
-        TODO("Not yet implemented")
-    }
+    fun calculateLifeSupportRating(oxygenGeneratorRate: String, co2ScrubberRate: String): Int =
+        oxygenGeneratorRate.binaryToDecimal()*co2ScrubberRate.binaryToDecimal()
 
 
 }

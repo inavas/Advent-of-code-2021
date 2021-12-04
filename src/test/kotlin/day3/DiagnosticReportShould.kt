@@ -52,8 +52,8 @@ class DiagnosticReportShould {
 
     @Test
     fun `Calculate life support rating`(){
-        val oxygenGeneratorRate = "10110"
-        val co2ScrubberRate = "01001"
+        val oxygenGeneratorRate = "10111"
+        val co2ScrubberRate = "01010"
         val diagonsticReport = DiagnosticReport()
 
         val powerConsumption = diagonsticReport.calculateLifeSupportRating(oxygenGeneratorRate, co2ScrubberRate)
