@@ -1,7 +1,5 @@
 package day3
 
-import java.util.*
-
 class DiagnosticReport {
     fun calculateBinary(report: List<String>): Pair<String,String> {
         var gammaBinary = ""
@@ -23,18 +21,25 @@ class DiagnosticReport {
         gammaRate.binaryToDecimal() * epsilonRate.binaryToDecimal()
 
     fun calculateOxigenGeneratorRating(report: List<String>): String {
-        var report2 = report
+        var resultingReport = report
 
         for (index in 0 until report.first().length) {
-            val moreCommonNumber = report2.map {it.elementAt(index) }.groupingBy { it }.eachCount().asIterable().reversed().maxByOrNull { it.value }?.key
-            report2 = report2.filter { value -> value.elementAt(index).toString() == moreCommonNumber.toString() }
+            val moreCommonNumber = resultingReport.map {it.elementAt(index) }.groupingBy { it }.eachCount().asIterable().reversed().maxByOrNull { it.value }?.key
+            resultingReport = resultingReport.filter { value -> value.elementAt(index).toString() == moreCommonNumber.toString() }
         }
 
-        return report2[0]
+        return resultingReport[0]
     }
 
     fun calculateCO2ScrubberRating(report: List<String>): String {
-        TODO("Not yet implemented")
+        var resultingReport = report
+
+        for (index in 0 until report.first().length) {
+            val moreCommonNumber = resultingReport.map {it.elementAt(index) }.groupingBy { it }.eachCount().toSortedMap().minByOrNull { it.value }?.key
+            resultingReport = resultingReport.filter { value -> value.elementAt(index).toString() == moreCommonNumber.toString() }
+        }
+
+        return resultingReport[0]
     }
 
 
