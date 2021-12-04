@@ -28,7 +28,6 @@ class DiagnosticReportShould {
         assertThat(powerConsumption).isEqualTo(198)
     }
 
-
     private fun getListFromFile(fileName: String): List<String> {
         val uri = this.javaClass.classLoader.getResource(fileName)
 
