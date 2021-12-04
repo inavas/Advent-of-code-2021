@@ -17,8 +17,11 @@ class DiagnosticReport {
 
     }
 
-    fun calculatePowerConsumption(gammaRate: String, epsilonRate: String): Int {
-        TODO("Not yet implemented")
-    }
+    fun calculatePowerConsumption(gammaRate: String, epsilonRate: String): Int =
+        gammaRate.binaryToDecimal() * epsilonRate.binaryToDecimal()
+
 
 }
+
+private fun String.binaryToDecimal(): Int  =
+    this.toInt(2)

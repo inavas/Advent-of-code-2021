@@ -1,6 +1,7 @@
 package day3
 
 import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import java.io.File
 
@@ -13,8 +14,8 @@ class DiagnosticReportShould {
         val diagnosticReport = DiagnosticReport()
 
         val (gammaRate,epsilonRate) = diagnosticReport.calculateBinary(report)
-        Assertions.assertThat(gammaRate).isEqualTo("10110")
-        Assertions.assertThat(epsilonRate).isEqualTo("01001")
+        assertThat(gammaRate).isEqualTo("10110")
+        assertThat(epsilonRate).isEqualTo("01001")
     }
 
     @Test
@@ -24,7 +25,7 @@ class DiagnosticReportShould {
         val diagonsticReport = DiagnosticReport()
 
         val powerConsumption = diagonsticReport.calculatePowerConsumption(gammaRate, epsilonRate)
-        Assertions.assertThat(powerConsumption).isEqualTo(198)
+        assertThat(powerConsumption).isEqualTo(198)
     }
 
 
