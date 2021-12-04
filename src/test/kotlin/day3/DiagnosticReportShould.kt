@@ -14,7 +14,7 @@ class DiagnosticReportShould {
 
         val (gammaRate,epsilonRate) = diagnosticReport.calculateBinary(report)
         Assertions.assertThat(gammaRate).isEqualTo("10110")
-        Assertions.assertThat(epsilonRate).isEqualTo("10110")
+        Assertions.assertThat(epsilonRate).isEqualTo("01001")
     }
 
 
