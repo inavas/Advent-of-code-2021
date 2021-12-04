@@ -50,6 +50,16 @@ class DiagnosticReportShould {
         assertThat(oxigenGeneratorRating).isEqualTo("01010")
     }
 
+    @Test
+    fun `Calculate life support rating`(){
+        val oxygenGeneratorRate = "10110"
+        val co2ScrubberRate = "01001"
+        val diagonsticReport = DiagnosticReport()
+
+        val powerConsumption = diagonsticReport.calculateLifeSupportRating(oxygenGeneratorRate, co2ScrubberRate)
+        assertThat(powerConsumption).isEqualTo(230)
+    }
+
 
     private fun getListFromFile(fileName: String): List<String> {
         val uri = this.javaClass.classLoader.getResource(fileName)

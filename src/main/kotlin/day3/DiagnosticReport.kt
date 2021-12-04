@@ -42,6 +42,10 @@ class DiagnosticReport {
         return resultingReport[0]
     }
 
+    fun calculateLifeSupportRating(oxygenGeneratorRate: String, co2ScrubberRate: String): Int {
+        TODO("Not yet implemented")
+    }
+
 
 }
 
