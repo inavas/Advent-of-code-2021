@@ -33,7 +33,7 @@ class DiagnosticReportShould {
 
         val diagnosticReport = DiagnosticReport()
 
-        val oxygenGeneratorRating = diagnosticReport.calculateOxigenGeneratorRating(report)
+        val oxygenGeneratorRating = diagnosticReport.calculateOxygenGeneratorRating(report)
 
         assertThat(oxygenGeneratorRating).isEqualTo("10111")
     }
@@ -52,11 +52,14 @@ class DiagnosticReportShould {
 
     @Test
     fun `Calculate life support rating`(){
-        val oxygenGeneratorRate = "10111"
-        val co2ScrubberRate = "01010"
+        val report = getListFromFile("day3/diagnostic_report_test.txt")
+
         val diagnosticReport = DiagnosticReport()
 
-        val powerConsumption = diagnosticReport.calculateLifeSupportRating(oxygenGeneratorRate, co2ScrubberRate)
+        val oxygenGeneratorRating = diagnosticReport.calculateOxygenGeneratorRating(report)
+        val co2GeneratorRating = diagnosticReport.calculateCO2ScrubberRating(report)
+
+        val powerConsumption = diagnosticReport.calculateLifeSupportRating(oxygenGeneratorRating, co2GeneratorRating)
         assertThat(powerConsumption).isEqualTo(230)
     }
 
