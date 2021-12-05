@@ -14,3 +14,9 @@ First year participating in Advent of Code. The purpose for this AOC is to solve
   [Code](https://github.com/inavas/Advent-of-code-2021/tree/main/src/main/kotlin/day2)
   
   [Tests](https://github.com/inavas/Advent-of-code-2021/tree/main/src/test/kotlin/day2)
+
+## :christmas_tree: Day 3 - Binary Diagnostic
+
+[Code](https://github.com/inavas/Advent-of-code-2021/tree/main/src/main/kotlin/day3)
+
+[Tests](https://github.com/inavas/Advent-of-code-2021/tree/main/src/test/kotlin/day3)
