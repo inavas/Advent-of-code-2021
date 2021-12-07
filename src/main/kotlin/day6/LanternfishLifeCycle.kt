@@ -1,8 +1,11 @@
 package day6
 
 class LanternfishLifeCycle {
-    fun calculateBreeding(initialLanternfishes: List<String>, days: Int): List<Int> {
-        TODO("Not yet implemented")
+    fun calculateBreeding(initialLanternfishInput: List<String>, days: Int): List<Int> {
+        val initialLanternfish = initialLanternfishInput.first().split(",").map { it.toString().toInt() }
+
+
+        return initialLanternfish.map { it-1 }
     }
 
 }
