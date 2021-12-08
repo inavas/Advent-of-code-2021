@@ -1,7 +1,6 @@
 package day6
 
-import org.assertj.core.api.Assertions
-import org.assertj.core.api.Assertions.*
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import java.io.File
 
@@ -17,7 +16,20 @@ class LanternfishLifeCycleShould {
 
         val expectedLanternfish = listOf(2,3,2,0,1)
         assertThat(resultingLanternfish).isEqualTo(expectedLanternfish)
+        assertThat(resultingLanternfish.size).isEqualTo(5)
     }
+
+    @Test
+    fun `Calculate quantity of lanternfish after 1 day faster`(){
+        val initialLanternfish = getListFromFile("day6/lanternfish_input_test.txt")
+
+        val lanternfishLifeCycle = LanternfishLifeCycle()
+        val days = 1
+        val resultingLanternfish = lanternfishLifeCycle.calculateBreedingFaster(initialLanternfish, days)
+
+        assertThat(resultingLanternfish).isEqualTo(5)
+    }
+
 
     @Test
     fun `Calculate quantity of lanternfish after 18 days`(){
@@ -32,6 +44,28 @@ class LanternfishLifeCycleShould {
 
         assertThat(resultingLanternfish).isEqualTo(expectedLanternfish)
         assertThat(totalFishes).isEqualTo(26)
+    }
+
+    @Test
+    fun `Calculate quantity of lanternfish after 18 days faster`(){
+        val initialLanternfish = getListFromFile("day6/lanternfish_input_test.txt")
+
+        val lanternfishLifeCycle = LanternfishLifeCycle()
+        val days = 18
+        val resultingLanternfish = lanternfishLifeCycle.calculateBreedingFaster(initialLanternfish, days)
+
+        assertThat(resultingLanternfish).isEqualTo(26)
+    }
+
+    @Test
+    fun `Calculate quantity of lanternfish after 256 days`(){
+        val initialLanternfish = getListFromFile("day6/lanternfish_input_test.txt")
+
+        val lanternfishLifeCycle = LanternfishLifeCycle()
+        val days = 256
+        val resultingLanternfish = lanternfishLifeCycle.calculateBreedingFaster(initialLanternfish, days)
+
+        assertThat(resultingLanternfish).isEqualTo(26984457539)
     }
 
 
