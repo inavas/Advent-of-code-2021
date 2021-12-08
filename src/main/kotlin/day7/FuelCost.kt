@@ -15,4 +15,8 @@ class FuelCost {
         return crabsPosition.map { abs(it - median) }.sum()
     }
 
+    fun calculateMinimumFuelToAlignCrabsForExpensiveMovement(crabsPosition: List<String>): Int {
+        TODO("Not yet implemented")
+    }
+
 }
