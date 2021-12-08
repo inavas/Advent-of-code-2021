@@ -4,7 +4,6 @@ class LanternfishLifeCycle {
     fun calculateBreeding(initialLanternfishInput: List<String>, days: Int): List<Int> {
         val initialLanternfish = initialLanternfishInput.first().split(",").map { it.toString().toInt() }.toMutableList()
 
-
         repeat(days) {
             for (i in 0 until initialLanternfish.size) {
                 if (initialLanternfish[i] == 0) {
@@ -21,7 +20,6 @@ class LanternfishLifeCycle {
 
     fun calculateBreedingFaster(initialLanternfishInput: List<String>, days: Int): Long {
         val initialLanternfish = initialLanternfishInput.first().split(",").map { it.toInt() }
-
         val lanternFishState = mutableMapOf(0 to 0L, 1 to 0L, 2 to 0L, 3 to 0L, 4 to 0L, 5 to 0L, 6 to 0L, 7 to 0L, 8 to 0L)
 
         (0..8).forEach { state ->
@@ -29,8 +27,7 @@ class LanternfishLifeCycle {
             lanternFishState[state] = quantityOfState
         }
 
-
-        for (i in 0 until days) {
+        (0 until days).forEach { _ ->
             val newFishes = lanternFishState[0]
             lanternFishState[0] = lanternFishState[1]!!
             lanternFishState[1] = lanternFishState[2]!!
@@ -43,8 +40,6 @@ class LanternfishLifeCycle {
             lanternFishState[8] = newFishes
         }
 
-
         return lanternFishState.map { it.value }.sum()
     }
-
 }
