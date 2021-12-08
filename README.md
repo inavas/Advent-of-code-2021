@@ -20,3 +20,9 @@ First year participating in Advent of Code. The purpose for this AOC is to solve
 [Code](https://github.com/inavas/Advent-of-code-2021/tree/main/src/main/kotlin/day3)
 
 [Tests](https://github.com/inavas/Advent-of-code-2021/tree/main/src/test/kotlin/day3)
+
+## :christmas_tree: Day 6 - Lanternfish
+
+[Code](https://github.com/inavas/Advent-of-code-2021/tree/main/src/main/kotlin/day6)
+
+[Tests](https://github.com/inavas/Advent-of-code-2021/tree/main/src/test/kotlin/day6)
